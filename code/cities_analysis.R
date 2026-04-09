@@ -26,9 +26,9 @@ cities_circle$continent <- cities_circle$continent %>% #problem with north ameri
 
 ## Model implementation ##
 fmod <- brms::bf(total_biomass ~ log(volume_per_unit_area) + (1 | continent/country/city), family = Gamma(link='log'))
-#mod <- brms::brm(fmod, data = cities_circle, iter = 3000, chains = 6, seed = 123)
+mod <- brms::brm(fmod, data = cities_circle, iter = 3000, chains = 6, seed = 123)
 #saveRDS(mod, file = "mod.rds")
-mod <- readRDS("outputs/mod.rds")
+#mod <- readRDS("outputs/mod.rds")
 
 
 ## Outputs ##
